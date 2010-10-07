@@ -26,7 +26,7 @@
 require 'rubygems'
 require 'scrapi'
 require 'htmlentities'
-#RailsTidy.tidy_path = “/Users/stokvis/\.rvm/gems/ruby\-1\.8\.7-p302@rails3/gems/scrapi-1\.2\.0/lib/tidy/libtidy.so”
+RailsTidy.tidy_path = '/Users/stokvis/.rvm/gems/ruby-1.8.7-p302@rails3/gems/scrapi-1.2.0/lib/tidy/libtidy.so'
 
 $BASE_URL = "http://www.world-airport-codes.com"
 $USER_AGENT = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
