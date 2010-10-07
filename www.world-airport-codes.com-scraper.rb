@@ -26,7 +26,7 @@
 require 'rubygems'
 require 'scrapi'
 require 'htmlentities'
-Tidy.path = “/usr/lib/libtidy.dylib”
+Tidy.path = '/usr/lib/libtidy.dylib'
 
 
 $BASE_URL = "http://www.world-airport-codes.com"
