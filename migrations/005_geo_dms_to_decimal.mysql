@@ -1,0 +1,43 @@
+-- Copyright 2007, Wiebe Cazemier, Rowan Rodrik van der Molen
+-- 
+-- 
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+-- 
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+-- 
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+DROP FUNCTION IF EXISTS `geo_dms_to_decimal`;
+
+DELIMITER |
+CREATE FUNCTION geo_dms_to_decimal(dms VARCHAR(30)) RETURNS DECIMAL(9,6)
+  LANGUAGE SQL DETERMINISTIC CONTAINS SQL
+BEGIN
+  DECLARE degrees INT(3);
+  DECLARE minutes INT(3);
+  DECLARE seconds INT(3);
+  DECLARE direction CHAR(1);
+  DECLARE deci DECIMAL(9,6);
+
+  SET @degrees = SUBSTRING_INDEX(dms, ' ', 1);
+  SET @minutes = SUBSTRING_INDEX(SUBSTRING_INDEX(dms, ' ', 2), ' ', -1);
+  SET @seconds = SUBSTRING_INDEX(SUBSTRING_INDEX(dms, ' ', 3), ' ', -1);
+  SET @direction = SUBSTRING_INDEX(dms, ' ', -1);
+
+  SET @deci = @degrees + (((@minutes * 60) + @seconds) / 3600);
+
+  IF @direction = 'W' OR @direction = 'S' THEN
+    SET @deci = 0 - @deci;
+  END IF;
+
+  RETURN @deci;
+END|
+DELIMITER ;

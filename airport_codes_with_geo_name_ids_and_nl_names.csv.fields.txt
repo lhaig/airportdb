@@ -1,0 +1,16 @@
+airport_code
+airport_name
+city_name
+country_name
+country_code
+latitude
+longitude
+world_area_code
+country_name_nl
+city_name_nl
+city_name_geo_name_id
+country_name_geo_name_id
+
+Field seperator is a comma (,), record seperator a newline. Proper escaping is
+done according to the CSV standard to be able to have comma's in the field
+contents.

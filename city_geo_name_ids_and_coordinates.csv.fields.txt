@@ -1,0 +1,7 @@
+geo_name_id
+latitude
+longitude
+
+Field seperator is a comma (,), record seperator a newline. Proper escaping is
+done according to the CSV standard to be able to have comma's in the field
+contents.

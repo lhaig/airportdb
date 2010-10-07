@@ -1,0 +1,97 @@
+-- Copyright 2007, Wiebe Cazemier, Rowan Rodrik van der Molen
+-- 
+-- 
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+-- 
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+-- 
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+CREATE TABLE geo_names
+(
+  id INT(10) UNSIGNED PRIMARY KEY,
+  name VARCHAR(100) NOT NULL COMMENT 'name of geographical point (utf8)',
+  ascii_name VARCHAR(100) NOT NULL COMMENT 'name of geographical point in plain ascii characters',
+  latitude DECIMAL(9,6) NOT NULL COMMENT 'latitude in decimal degrees (wgs84)',
+  longitude DECIMAL(9,6) NOT NULL COMMENT 'longitude in decimal degrees (wgs84)',
+  feature_class CHAR(1) NOT NULL COMMENT 'see http://www.geonames.org/export/codes.html',
+  feature_code VARCHAR(10) NOT NULL COMMENT 'see http://www.geonames.org/export/codes.html',
+  country_code CHAR(2) NOT NULL COMMENT 'ISO-3166 2-letter country code, 2 characters',
+  population INT(11),
+  elevation INT(11) COMMENT 'in meters',
+  gtopo30 INT(11) COMMENT 'average elevation of 30"x30" (ca 900mx900m) area in meters',
+  timezone INT(11) COMMENT 'the timezone id (see file timeZone.txt)',
+  modification_date DATE,
+  INDEX (name),
+  INDEX (ascii_name)
+) ENGINE=InnoDB;
+
+CREATE TABLE geo_alternate_names
+(
+  id INT(11) UNSIGNED PRIMARY KEY,
+  geo_name_id INT(11) UNSIGNED REFERENCES geo_names(id),
+  iso_language VARCHAR(4) NOT NULL
+    COMMENT 'iso 693 language code 2- or 3-characters; 4-characters "post" for postal codes and "iata" or "icao" for airport codes',
+  alternate_name VARCHAR(200) NOT NULL
+    COMMENT 'alternate name or name variant',
+  is_preferred_name TINYINT(1) NOT NULL DEFAULT 0
+    COMMENT '"1", if this alternate name is an official/preferred name',
+  is_short_name TINYINT(1) NOT NULL DEFAULT 0
+    COMMENT '"1", if this is a short name like "California" for "State of California"',
+  INDEX (geo_name_id, iso_language)
+) ENGINE=InnoDB;
+
+CREATE TABLE airport_codes
+(
+  id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  airport_code CHAR(3) NOT NULL,
+  airport_name VARCHAR(200) NOT NULL,
+  city_name VARCHAR(200) NOT NULL,
+  country_name VARCHAR(200) NOT NULL,
+  country_code VARCHAR(3) NOT NULL,
+  latitude DECIMAL(9,6) NOT NULL,
+  longitude DECIMAL(9,6) NOT NULL,
+  world_area_code INT(11) NOT NULL
+) ENGINE=InnoDB;
+
+DELIMITER |
+CREATE FUNCTION geo_dms_to_decimal(dms VARCHAR(30)) RETURNS DECIMAL(9,6)
+  LANGUAGE SQL DETERMINISTIC CONTAINS SQL
+BEGIN
+  DECLARE degrees INT(3);
+  DECLARE minutes INT(3);
+  DECLARE seconds INT(3);
+  DECLARE direction CHAR(1);
+  DECLARE deci DECIMAL(9,6);
+
+  SET @degrees = SUBSTRING_INDEX(dms, ' ', 1);
+  SET @minutes = SUBSTRING_INDEX(SUBSTRING_INDEX(dms, ' ', 2), ' ', -1);
+  SET @seconds = SUBSTRING_INDEX(SUBSTRING_INDEX(dms, ' ', 3), ' ', -1);
+  SET @direction = SUBSTRING_INDEX(dms, ' ', -1);
+
+  SET @deci = @degrees + (((@minutes * 60) + @seconds) / 3600);
+
+  IF @direction = 'W' OR @direction = 'S' THEN
+    SET @deci = 0 - @deci;
+  END IF;
+
+  RETURN @deci;
+END|
+DELIMITER ;
+
+LOAD DATA LOCAL INFILE '../www.world-airport-codes.com.csv'
+  INTO TABLE airport_codes
+  FIELDS TERMINATED BY ';'
+  LINES TERMINATED BY '\n' STARTING BY ''
+  (airport_code,airport_name,city_name,country_name,country_code,@longitude,@latitude,world_area_code)
+  SET latitude = geo_dms_to_decimal(@latitude),
+      longitude = geo_dms_to_decimal(@longitude)
+  ;
