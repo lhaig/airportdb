@@ -1,5 +1,0 @@
-These are the update dates of the csv files:
-
-airport_codes_with_geo_name_ids_and_nl_names.csv (2008-04-17)
-city_geo_name_ids_and_coordinates.csv (2008-04-17)
-www.world-airport-codes.com.csv (2008-04-13)
