@@ -23,19 +23,19 @@
 // Production database server is not relevant for the airport or geoname stuff. 
 // Define your DB as development DB.
 if ( getenv('WEB_ENV') == 'production' ) {
-  define('MYMYSQL_HOST', 'hostname');
-  define('MYMYSQL_USER', 'username');
-  define('MYMYSQL_PASSWORD', 'password');
+  define('MYMYSQL_HOST', '127.0.0.1');
+  define('MYMYSQL_USER', 'root');
+  define('MYMYSQL_PASSWORD', '');
   define('WEB_ENV', 'production');
 }
 else {
-  define('MYMYSQL_HOST', 'hostname');
-  define('MYMYSQL_USER', 'username');
-  define('MYMYSQL_PASSWORD', 'password');
+  define('MYMYSQL_HOST', '127.0.0.1');
+  define('MYMYSQL_USER', 'root');
+  define('MYMYSQL_PASSWORD', '');
   define('WEB_ENV', 'development');
 }
 
-define('MYMYSQL_DB', 'databasename');
+define('MYMYSQL_DB', 'geocity');
 
 mysql_connect(MYMYSQL_HOST, MYMYSQL_USER, MYMYSQL_PASSWORD) or die('Could not connect: ' . mysql_error());
 mysql_select_db(MYMYSQL_DB);

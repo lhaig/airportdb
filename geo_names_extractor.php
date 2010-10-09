@@ -135,7 +135,7 @@ while($alternate_names_line = fgets($alternate_names_file_handle))
 {
   list($id, $geo_name_id, $iso_language, $alternate_name, , ) = explode("\t", $alternate_names_line);
 
-  if ( $iso_language == 'nl' )
+  if ( $iso_language == 'en' )
   {
     echo "  - Updating country names...\n";
     mymysql_update("airport_codes", "country_name_geo_name_id = $geo_name_id", array('country_name_nl' => $alternate_name));

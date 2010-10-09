@@ -15,11 +15,11 @@
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-ALTER TABLE airport_codes ADD COLUMN country_name_nl VARCHAR(200);
-ALTER TABLE airport_codes ADD INDEX (country_name_nl);
+-- ALTER TABLE airport_codes ADD COLUMN country_name_nl VARCHAR(200);
+-- ALTER TABLE airport_codes ADD INDEX (country_name_nl);
 
-ALTER TABLE airport_codes ADD COLUMN city_name_nl VARCHAR(200);
-ALTER TABLE airport_codes ADD INDEX (city_name_nl);
+-- ALTER TABLE airport_codes ADD COLUMN city_name_nl VARCHAR(200);
+-- ALTER TABLE airport_codes ADD INDEX (city_name_nl);
 
 ALTER TABLE airport_codes ADD INDEX (city_name);
 ALTER TABLE airport_codes ADD INDEX (airport_name);

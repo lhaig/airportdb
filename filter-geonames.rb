@@ -45,7 +45,7 @@ File.open($geonames_alt_filtered, "w") do |output_file|
     input_file.each_line do |line|
       fields = line.split("\t")
       feature_class = fields[2]
-      output_file.write(line) if feature_class.downcase.match(/nl/)
+      output_file.write(line) if feature_class.downcase.match(/en/)
     end
   end
 end
