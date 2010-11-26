@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  iatacode: MyString
+  name: MyString
+  longitude: 1.5
+  latitude: 1.5
+
+two:
+  iatacode: MyString
+  name: MyString
+  longitude: 1.5
+  latitude: 1.5
