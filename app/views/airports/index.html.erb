@@ -1,0 +1,55 @@
+<h1>Listing airports</h1>
+
+<table>
+  <tr>
+    <th>Ident</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Latitude deg</th>
+    <th>Longitude deg</th>
+    <th>Elevation ft</th>
+    <th>Continent</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Municipality</th>
+    <th>Scheduled service</th>
+    <th>Gps code</th>
+    <th>Iata code</th>
+    <th>Local code</th>
+    <th>Home link</th>
+    <th>Wikipedia link</th>
+    <th>Keywords</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @airports.each do |airport| %>
+  <tr>
+    <td><%= airport.ident %></td>
+    <td><%= airport.type %></td>
+    <td><%= airport.name %></td>
+    <td><%= airport.latitude_deg %></td>
+    <td><%= airport.longitude_deg %></td>
+    <td><%= airport.elevation_ft %></td>
+    <td><%= airport.continent %></td>
+    <td><%= airport.country_id %></td>
+    <td><%= airport.region_id %></td>
+    <td><%= airport.municipality %></td>
+    <td><%= airport.scheduled_service %></td>
+    <td><%= airport.gps_code %></td>
+    <td><%= airport.iata_code %></td>
+    <td><%= airport.local_code %></td>
+    <td><%= airport.home_link %></td>
+    <td><%= airport.wikipedia_link %></td>
+    <td><%= airport.keywords %></td>
+    <td><%= link_to 'Show', airport %></td>
+    <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
+    <td><%= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Airport', new_airport_path %>

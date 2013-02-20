@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ident:</b>
+  <%= @airport.ident %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @airport.type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @airport.name %>
+</p>
+
+<p>
+  <b>Latitude deg:</b>
+  <%= @airport.latitude_deg %>
+</p>
+
+<p>
+  <b>Longitude deg:</b>
+  <%= @airport.longitude_deg %>
+</p>
+
+<p>
+  <b>Elevation ft:</b>
+  <%= @airport.elevation_ft %>
+</p>
+
+<p>
+  <b>Continent:</b>
+  <%= @airport.continent %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @airport.country_id %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @airport.region_id %>
+</p>
+
+<p>
+  <b>Municipality:</b>
+  <%= @airport.municipality %>
+</p>
+
+<p>
+  <b>Scheduled service:</b>
+  <%= @airport.scheduled_service %>
+</p>
+
+<p>
+  <b>Gps code:</b>
+  <%= @airport.gps_code %>
+</p>
+
+<p>
+  <b>Iata code:</b>
+  <%= @airport.iata_code %>
+</p>
+
+<p>
+  <b>Local code:</b>
+  <%= @airport.local_code %>
+</p>
+
+<p>
+  <b>Home link:</b>
+  <%= @airport.home_link %>
+</p>
+
+<p>
+  <b>Wikipedia link:</b>
+  <%= @airport.wikipedia_link %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @airport.keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_airport_path(@airport) %> |
+<%= link_to 'Back', airports_path %>

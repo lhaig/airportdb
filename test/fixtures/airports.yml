@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ident: MyString
+  type: 
+  name: MyString
+  latitude_deg: MyString
+  longitude_deg: MyString
+  elevation_ft: MyString
+  continent: MyText
+  country_id: 1
+  region_id: 1
+  municipality: MyText
+  scheduled_service: MyText
+  gps_code: MyText
+  iata_code: MyText
+  local_code: MyText
+  home_link: MyText
+  wikipedia_link: MyText
+  keywords: MyText
+
+two:
+  ident: MyString
+  type: 
+  name: MyString
+  latitude_deg: MyString
+  longitude_deg: MyString
+  elevation_ft: MyString
+  continent: MyText
+  country_id: 1
+  region_id: 1
+  municipality: MyText
+  scheduled_service: MyText
+  gps_code: MyText
+  iata_code: MyText
+  local_code: MyText
+  home_link: MyText
+  wikipedia_link: MyText
+  keywords: MyText
