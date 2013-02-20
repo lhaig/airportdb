@@ -1,158 +1,55 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Airportdb : Database of Airports with geolocations" />
 
-  <title>Airportdb</title>
-  <meta name="description" content="Database of Airports with geolocations">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Airportdb</title>
+  </head>
 
-</head>
+  <body>
 
-<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/lhaig/airportdb">View on GitHub</a>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Airportdb</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Database of Airports with geolocations</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/lhaig/airportdb/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/lhaig/airportdb/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/lhaig/airportdb" class="code">fork Airportdb on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h2>AirportDB.</h2>
+          <h1 id="project_title">Airportdb</h1>
+          <h2 id="project_tagline">Database of Airports with geolocations</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<h3>INTRODUCTION</h3>
-
-<p>Www.world-airport-codes.com offers a list of all airport codes. Unfortunatly,
-they don't offer a convenient way of downloading it. That is why we wrote this
-collection of scripts. Additionally, we made scripts that links each airport to
-a specific geological location, from the database from <a href="http://www.geonames.org">www.geonames.org</a>. And
-because we needed the dutch name of both the city and the country the airport
-was in, we included that in the table as well.</p>
-
-<p>These scripts were originally not intended for release (but were released upon
-request anyway), so don't complain about the mess :)</p>
-
-<h3>SOFTWARE REQUIREMENTS</h3>
-
-<ul>
-<li>MySQL database (only needed when collecting the geonames info)</li>
-<li>Ruby</li>
-<li>Ruby gem scrapi</li>
-<li>Ruby gem htmlentities</li>
-<li>PHP (version 5 probably)</li>
-</ul><h3>USAGE</h3>
-
-<p>Usage is quite complicated, because it originally wasn't intended to be
-distributed. Hopefully it will all become clear.</p>
-
-<p>First you're going to have to run the airport code scraper. Simply do this by
-running "ruby <a href="http://www.world-airport-codes.com-scraper.rb">www.world-airport-codes.com-scraper.rb</a>". It outputs to standard
-out, so you have to redirect it's output, which will be a csv file. An already
-scraped version of this csv file is included (<a href="http://www.world-airport-codes.com.csv">www.world-airport-codes.com.csv</a>).
-The scraping can take quite a while. </p>
-
-<p>If you're not interested in the geoname data, you're done now. You have a csv
-full of airport code data.</p>
-
-<p>Then, if you're interested in the geonames data, you need to create a MySQL
-database. Enter the database connection properties in "db-connection.php", as
-development database. Don't forget to choose the correct character encoding
-command! </p>
-
-<p>Then you need to load the database structure. This step is a bit complex. Load
-the files 001<em>* and 002* into your database by hand with the command 
-"mysql --user=user --password=password --host=host databasename &lt; mysql-commands.mysql" 
-(run it once for 001</em>... and then for 002_...).  Then, run 
-"php migrate.php". If all goes well, it should perform all the changes to the
-database to arrive at the version we ended up using. For more information about
-the migration script, go to <a href="http://www.halfgaar.net/mysql-migrations">http://www.halfgaar.net/mysql-migrations</a>. I
-recommend you use a database on the localhost, otherwise it will be very very
-slow.</p>
-
-<p>The geoname data files can be downloaded at:
-<a href="http://download.geonames.org/export/dump/">http://download.geonames.org/export/dump/</a>. You need allCountries.zip and
-alternateNames.zip. The specification of the data fields can be found there as
-well.</p>
-
-<p>Then you may want to run the "filter-geonames.rb" script, to remove everything
-from these csv files you don't need. For me, it meant going from a 700MB csv
-file, to a 250 MB one, so it was worth it.</p>
-
-<p>Then load the airport codes csv file into the database. This is done with the
-php script reload_airport_data_into_db.php.</p>
-
-<p>The next step is to run the geo_names_extractor.php script, which gives each
-airport a city_name_geo_name_id or country_name_geo_name_id. It also sets the
-Dutch city and country names for each airport.</p>
-
-<p>When this is all done, you have a database full of useful information. If you
-want this in a csv file, you can use the script dump_airport_data_from_db.php
-to dump the database contents to CSV.</p>
-
-<h3>ADDITIONAL INFORMATION</h3>
-
-<p>Also read the introductory comment in each script for more details about it.
-They might say a bit more than this README file does.</p>
-
-<h3>AIRPORT COORDINATES</h3>
-
-<p>We found that a lot of airports in the airport codes database don't have proper
-coordinates (some are in the middle of the sea...). This is partly because
-obscure airports, like helipads, are listed, of which nobody really confirmed
-the coordinates, I guess. If you want (more) reliable ones, use the ones from
-the geonames data (although you will have the coordinates of the city, not the
-airfield). If you did everything I mentioned in this script, they can be found
-in the "cities" table in your database. Simply do a join based on the
-city_name_geo_name_id between cities and airport_codes.</p>
-
-<h3>BUGS/PROBLEMS</h3>
-
-<p>Should there be any problems, you can contact Wiebe Cazemier (wiebe@halfgaar.net). </p>
-
-<h3>AUTHORS</h3>
-
-<ul>
-<li>Wiebe Cazemier (<a href="http://www.halfgaar.net">http://www.halfgaar.net</a>, wiebe@halfgaar.net) </li>
-<li>Rowan Rodrik van der Molen</li>
-</ul>
-        </article>
-      </div>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/lhaig/airportdb/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/lhaig/airportdb/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/lhaig" class="avatar"><img src="https://secure.gravatar.com/avatar/f3830071c2a7bc4be6a4a0df541e0a48?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/lhaig">lhaig</a> maintains <a href="https://github.com/lhaig/airportdb">Airportdb</a></p>
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/lhaig/airportdb/tarball/master" class="tar">tar</a><a href="https://github.com/lhaig/airportdb/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
 
-  
-</body>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>== Welcome to the AirportDB app
+This app is my attempt to display the data provided by <a href="http://www.ourairports.com/data/">http://www.ourairports.com/data/</a>
+in rails and hopefully get some help to make it better.</p>
+
+<p>== Copyright</p>
+
+<p>Copyright (c) 2013 Lance Haig. See <a href="https://github.com/lhaig/airportdb/blob/master/LICENSE">LICENSE</a> for details.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Airportdb maintained by <a href="https://github.com/lhaig">lhaig</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
