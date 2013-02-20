@@ -1,3 +1,4 @@
 class Region < ActiveRecord::Base
-  attr_accessible :code, :continent, :iso_country, :keywords, :local_code, :name, :wikipedia_link
+  attr_accessible :code, :continent, :country_id, :keywords, :local_code, :name, :wikipedia_link
+  has_many :countries
 end
