@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @country.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @country.name %>
+</p>
+
+<p>
+  <b>Continent:</b>
+  <%= @country.continent %>
+</p>
+
+<p>
+  <b>Wikipedia link:</b>
+  <%= @country.wikipedia_link %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @country.keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>
