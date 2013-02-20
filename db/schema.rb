@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220120233) do
+ActiveRecord::Schema.define(:version => 20130220141321) do
 
   create_table "airports", :force => true do |t|
     t.string   "ident"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(:version => 20130220120233) do
     t.string   "keywords"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "countryregionisations", :force => true do |t|
+    t.integer  "country_id"
+    t.integer  "region_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "regions", :force => true do |t|
