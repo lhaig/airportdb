@@ -18,7 +18,7 @@ class RegionsControllerTest < ActionController::TestCase
 
   test "should create region" do
     assert_difference('Region.count') do
-      post :create, region: { code: @region.code, continent: @region.continent, iso_country: @region.iso_country, keywords: @region.keywords, local_code: @region.local_code, name: @region.name, wikipedia_link: @region.wikipedia_link }
+      post :create, region: { code: @region.code, continent: @region.continent, country_id: @region.country_id, keywords: @region.keywords, local_code: @region.local_code, name: @region.name, wikipedia_link: @region.wikipedia_link }
     end
 
     assert_redirected_to region_path(assigns(:region))
@@ -35,7 +35,7 @@ class RegionsControllerTest < ActionController::TestCase
   end
 
   test "should update region" do
-    put :update, id: @region, region: { code: @region.code, continent: @region.continent, iso_country: @region.iso_country, keywords: @region.keywords, local_code: @region.local_code, name: @region.name, wikipedia_link: @region.wikipedia_link }
+    put :update, id: @region, region: { code: @region.code, continent: @region.continent, country_id: @region.country_id, keywords: @region.keywords, local_code: @region.local_code, name: @region.name, wikipedia_link: @region.wikipedia_link }
     assert_redirected_to region_path(assigns(:region))
   end
 
