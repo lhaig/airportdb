@@ -7,17 +7,17 @@ class CreateAirports < ActiveRecord::Migration
       t.string :latitude_deg
       t.string :longitude_deg
       t.string :elevation_ft
-      t.text :continent
+      t.string :continent
       t.integer :country_id
       t.integer :region_id
-      t.text :municipality
-      t.text :scheduled_service
-      t.text :gps_code
-      t.text :iata_code
-      t.text :local_code
-      t.text :home_link
-      t.text :wikipedia_link
-      t.text :keywords
+      t.string :municipality
+      t.string :scheduled_service
+      t.string :gps_code
+      t.string :iata_code
+      t.string :local_code
+      t.string :home_link
+      t.string :wikipedia_link
+      t.string :keywords
 
       t.timestamps
     end

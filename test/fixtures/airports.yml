@@ -7,17 +7,17 @@ one:
   latitude_deg: MyString
   longitude_deg: MyString
   elevation_ft: MyString
-  continent: MyText
+  continent: MyString
   country_id: 1
   region_id: 1
-  municipality: MyText
-  scheduled_service: MyText
-  gps_code: MyText
-  iata_code: MyText
-  local_code: MyText
-  home_link: MyText
-  wikipedia_link: MyText
-  keywords: MyText
+  municipality: MyString
+  scheduled_service: MyString
+  gps_code: MyString
+  iata_code: MyString
+  local_code: MyString
+  home_link: MyString
+  wikipedia_link: MyString
+  keywords: MyString
 
 two:
   ident: MyString
@@ -26,14 +26,14 @@ two:
   latitude_deg: MyString
   longitude_deg: MyString
   elevation_ft: MyString
-  continent: MyText
+  continent: MyString
   country_id: 1
   region_id: 1
-  municipality: MyText
-  scheduled_service: MyText
-  gps_code: MyText
-  iata_code: MyText
-  local_code: MyText
-  home_link: MyText
-  wikipedia_link: MyText
-  keywords: MyText
+  municipality: MyString
+  scheduled_service: MyString
+  gps_code: MyString
+  iata_code: MyString
+  local_code: MyString
+  home_link: MyString
+  wikipedia_link: MyString
+  keywords: MyString
