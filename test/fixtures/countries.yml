@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  code: MyString
-  name: MyString
-  continent: MyString
-  wikipedia_link: MyString
-  keywords: MyString
+  code: US
+  name: United States
+  continent: NA
+  wikipedia_link: http://en.wikipedia.org/wiki/United_States
+  keywords: America
 
 two:
-  code: MyString
-  name: MyString
-  continent: MyString
-  wikipedia_link: MyString
-  keywords: MyString
+  code: AE
+  name: United Arab Emirates
+  continent: AS
+  wikipedia_link: http://en.wikipedia.org/wiki/United_Arab_Emirates
+  keywords: UAE

@@ -4,7 +4,7 @@ class CreateRegions < ActiveRecord::Migration
       t.string :code
       t.string :local_code
       t.string :name
-      t.string :continent
+      t.integer :continent_id
       t.integer :country_id
       t.string :wikipedia_link
       t.string :keywords

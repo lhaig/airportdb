@@ -6,7 +6,8 @@ class CreateCountries < ActiveRecord::Migration
       t.string  :continent
       t.string  :wikipedia_link
       t.string  :keywords
-      t.integer :airports_id
+      t.integer :airport_id
+      t.integer :region_id
 
       t.timestamps
     end

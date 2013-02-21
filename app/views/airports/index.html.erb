@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Ident</th>
-    <th>Type</th>
+    <th>Airport Type</th>
     <th>Name</th>
     <th>Latitude deg</th>
     <th>Longitude deg</th>
@@ -27,12 +27,12 @@
 <% @airports.each do |airport| %>
   <tr>
     <td><%= airport.ident %></td>
-    <td><%= airport.type %></td>
+    <td><%= airport.airport_type %></td>
     <td><%= airport.name %></td>
     <td><%= airport.latitude_deg %></td>
     <td><%= airport.longitude_deg %></td>
     <td><%= airport.elevation_ft %></td>
-    <td><%= airport.continent %></td>
+    <td><%= airport.continent_id %></td>
     <td><%= airport.country_id %></td>
     <td><%= airport.region_id %></td>
     <td><%= airport.municipality %></td>

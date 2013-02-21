@@ -1,39 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  ident: MyString
-  type: 
-  name: MyString
-  latitude_deg: MyString
-  longitude_deg: MyString
-  elevation_ft: MyString
-  continent: MyString
+  ident: OOH
+  airport_type: seaplane_base
+  name: Hoonah Seaplane Base
+  latitude_deg: 58.1122016906738
+  longitude_deg: -135.451995849609
+  elevation_ft: 
+  continent_id: 1
   country_id: 1
   region_id: 1
-  municipality: MyString
-  scheduled_service: MyString
-  gps_code: MyString
-  iata_code: MyString
-  local_code: MyString
-  home_link: MyString
-  wikipedia_link: MyString
-  keywords: MyString
+  municipality: Hoonah
+  scheduled_service: No
+  gps_code: OOH
+  iata_code: 
+  local_code: OOH
+  home_link: 
+  wikipedia_link: 
+  keywords: 
 
 two:
-  ident: MyString
-  type: 
-  name: MyString
-  latitude_deg: MyString
-  longitude_deg: MyString
-  elevation_ft: MyString
-  continent: MyString
-  country_id: 1
-  region_id: 1
-  municipality: MyString
-  scheduled_service: MyString
-  gps_code: MyString
-  iata_code: MyString
-  local_code: MyString
-  home_link: MyString
-  wikipedia_link: MyString
-  keywords: MyString
+  ident: OM10
+  airport_type: small_airport
+  name: Yas Island Airport
+  latitude_deg: 24.2840003967285
+  longitude_deg: 52.5803985595703
+  elevation_ft: 
+  continent_id: 2
+  country_id: 2
+  region_id: 2
+  municipality: Yas Island
+  scheduled_service: no
+  gps_code: 
+  iata_code: 
+  local_code: 
+  home_link: 
+  wikipedia_link: 
+  keywords: 
+
+

@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  code: MyString
-  local_code: MyString
-  name: MyString
-  continent: MyString
+  code: US-AK
+  local_code: AK
+  name: Alaska
+  continent_id: 1
   country_id: 1
-  wikipedia_link: MyString
+  wikipedia_link: http://en.wikipedia.org/wiki/Alaska
   keywords: MyString
 
 two:
-  code: MyString
-  local_code: MyString
-  name: MyString
-  continent: MyString
-  country_id: 1
-  wikipedia_link: MyString
-  keywords: MyString
+  code: AE-AZ
+  local_code: AZ
+  name: Abu Dhabi Emirate
+  continent_id: 2
+  country_id: 2
+  wikipedia_link: http://en.wikipedia.org/wiki/Abu_Dhabi_(emirate)
+  keywords: Abu Ẓaby

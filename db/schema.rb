@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
 
   create_table "airports", :force => true do |t|
     t.string   "ident"
-    t.string   "type"
+    t.string   "airport_type"
     t.string   "name"
     t.string   "latitude_deg"
     t.string   "longitude_deg"
     t.string   "elevation_ft"
-    t.string   "continent"
+    t.integer  "continent_id"
     t.integer  "country_id"
     t.integer  "region_id"
     t.string   "municipality"
@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.string   "continent"
     t.string   "wikipedia_link"
     t.string   "keywords"
-    t.integer  "airports_id"
+    t.integer  "airport_id"
+    t.integer  "region_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -55,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.string   "code"
     t.string   "local_code"
     t.string   "name"
-    t.string   "continent"
+    t.integer  "continent_id"
     t.integer  "country_id"
     t.string   "wikipedia_link"
     t.string   "keywords"
