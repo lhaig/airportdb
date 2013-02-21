@@ -3,8 +3,6 @@ class CreateCountryregionisations < ActiveRecord::Migration
     create_table :countryregionisations do |t|
       t.integer :country_id
       t.integer :region_id
-
-      t.timestamps
     end
   end
 end
