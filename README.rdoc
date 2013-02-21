@@ -1,7 +1,0 @@
-== Welcome to the AirportDB app
-This app is my attempt to display the data provided by http://www.ourairports.com/data/
-in rails and hopefully get some help to make it better.
-
-== Copyright
-
-Copyright (c) 2013 Lance Haig. See [LICENSE](https://github.com/lhaig/airportdb/blob/master/LICENSE) for details.
