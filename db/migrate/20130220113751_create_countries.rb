@@ -11,5 +11,6 @@ class CreateCountries < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :countries, [:airport_id, :region_id]
   end
 end

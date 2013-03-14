@@ -7,9 +7,9 @@ class CreateAirports < ActiveRecord::Migration
       t.string :latitude_deg
       t.string :longitude_deg
       t.string :elevation_ft
-      t.integer :continent_id
+      t.string :continent
       t.integer :country_id
-      t.integer :region_id
+      t.string :region_id
       t.string :municipality
       t.string :scheduled_service
       t.string :gps_code
@@ -21,5 +21,6 @@ class CreateAirports < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :airports, [:country_id, :region_id]
   end
 end

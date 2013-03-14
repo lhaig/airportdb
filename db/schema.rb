@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.string   "latitude_deg"
     t.string   "longitude_deg"
     t.string   "elevation_ft"
-    t.integer  "continent_id"
+    t.string   "continent"
     t.integer  "country_id"
-    t.integer  "region_id"
+    t.string   "region_id"
     t.string   "municipality"
     t.string   "scheduled_service"
     t.string   "gps_code"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
+
+  add_index "airports", ["country_id", "region_id"], :name => "index_airports_on_country_id_and_region_id"
 
   create_table "countries", :force => true do |t|
     t.string   "code"
@@ -47,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.datetime "updated_at",     :null => false
   end
 
+  add_index "countries", ["airport_id", "region_id"], :name => "index_countries_on_airport_id_and_region_id"
+
   create_table "countryregionisations", :force => true do |t|
     t.integer "country_id"
     t.integer "region_id"
@@ -56,12 +60,14 @@ ActiveRecord::Schema.define(:version => 20130220141321) do
     t.string   "code"
     t.string   "local_code"
     t.string   "name"
-    t.integer  "continent_id"
+    t.string   "continent"
     t.integer  "country_id"
     t.string   "wikipedia_link"
     t.string   "keywords"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "regions", ["country_id"], :name => "index_regions_on_country_id"
 
 end

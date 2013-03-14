@@ -1,85 +1,88 @@
-<%= form_for(@airport) do |f| %>
-  <% if @airport.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@airport.errors.count, "error") %> prohibited this airport from being saved:</h2>
+<form class="form-horizontal">
+  <%= form_for(@airport) do |f| %>
+    <% if @airport.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@airport.errors.count, "error") %> prohibited this airport from being saved:</h2>
 
-      <ul>
-      <% @airport.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @airport.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <div class="control-group">
+        <%= f.label :ident %><br />
+        <%= f.text_field :ident %>
+      </div>
+      <div class="control-group">
+        <%= f.label :airport_type %><br />
+        <%= f.text_field :airport_type %>
+      </div>
+      <div class="control-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="control-group">
+        <%= f.label :latitude_deg %><br />
+        <%= f.text_field :latitude_deg %>
+      </div>
+      <div class="control-group">
+        <%= f.label :longitude_deg %><br />
+        <%= f.text_field :longitude_deg %>
+      </div>
+      <div class="control-group">
+        <%= f.label :elevation_ft %><br />
+        <%= f.text_field :elevation_ft %>
+      </div>
+      <div class="control-group">
+        <%= f.label :continent %><br />
+        <%= f.number_field :continent %>
+      </div>
+      <div class="control-group">
+        <%= f.label :country_id %><br />
+        <%= f.number_field :country_id %>
+      </div>
+      <div class="control-group">
+        <%= f.label :region %><br />
+        <%= f.number_field :region %>
+      </div>
+      <div class="control-group">
+        <%= f.label :municipality %><br />
+        <%= f.text_field :municipality %>
+      </div>
+      <div class="control-group">
+        <%= f.label :scheduled_service %><br />
+        <%= f.text_field :scheduled_service %>
+      </div>
+      <div class="control-group">
+        <%= f.label :gps_code %><br />
+        <%= f.text_field :gps_code %>
+      </div>
+      <div class="control-group">
+        <%= f.label :iata_code %><br />
+        <%= f.text_field :iata_code %>
+      </div>
+      <div class="control-group">
+        <%= f.label :local_code %><br />
+        <%= f.text_field :local_code %>
+      </div>
+      <div class="control-group">
+        <%= f.label :home_link %><br />
+        <%= f.text_field :home_link %>
+      </div>
+      <div class="control-group">
+        <%= f.label :wikipedia_link %><br />
+        <%= f.text_field :wikipedia_link %>
+      </div>
+      <div class="control-group">
+        <%= f.label :keywords %><br />
+        <%= f.text_field :keywords %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :ident %><br />
-    <%= f.text_field :ident %>
-  </div>
-  <div class="field">
-    <%= f.label :airport_type %><br />
-    <%= f.text_field :airport_type %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude_deg %><br />
-    <%= f.text_field :latitude_deg %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude_deg %><br />
-    <%= f.text_field :longitude_deg %>
-  </div>
-  <div class="field">
-    <%= f.label :elevation_ft %><br />
-    <%= f.text_field :elevation_ft %>
-  </div>
-  <div class="field">
-    <%= f.label :continent_id %><br />
-    <%= f.text_area :continent_id %>
-  </div>
-  <div class="field">
-    <%= f.label :country_id %><br />
-    <%= f.number_field :country_id %>
-  </div>
-  <div class="field">
-    <%= f.label :region_id %><br />
-    <%= f.number_field :region_id %>
-  </div>
-  <div class="field">
-    <%= f.label :municipality %><br />
-    <%= f.text_area :municipality %>
-  </div>
-  <div class="field">
-    <%= f.label :scheduled_service %><br />
-    <%= f.text_area :scheduled_service %>
-  </div>
-  <div class="field">
-    <%= f.label :gps_code %><br />
-    <%= f.text_area :gps_code %>
-  </div>
-  <div class="field">
-    <%= f.label :iata_code %><br />
-    <%= f.text_area :iata_code %>
-  </div>
-  <div class="field">
-    <%= f.label :local_code %><br />
-    <%= f.text_area :local_code %>
-  </div>
-  <div class="field">
-    <%= f.label :home_link %><br />
-    <%= f.text_area :home_link %>
-  </div>
-  <div class="field">
-    <%= f.label :wikipedia_link %><br />
-    <%= f.text_area :wikipedia_link %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br />
-    <%= f.text_area :keywords %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</form>

@@ -14,6 +14,7 @@ class AirportsController < ApplicationController
   # GET /airports/1.json
   def show
     @airport = Airport.find(params[:id])
+    @country = @airport.country(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
