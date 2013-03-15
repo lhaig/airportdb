@@ -6,7 +6,7 @@ Airportdb::Application.routes.draw do
 
 
   resources :countries
-
+  root :to => 'airports#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
