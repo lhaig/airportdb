@@ -9,11 +9,10 @@ This project is still ALPHA
 ### Troubleshooting
 
 ### Development
+To see what has changed in recent versions of AirportDB, see the [CHANGELOG]().
 
 ### Datamodel
 ![DataModel](https://raw.github.com/lhaig/airportdb/gh-pages/images/AirportsDB.png)
-
-To see what has changed in recent versions of AirportDB, see the [CHANGELOG]().
 
 ### Core Team Members
 
