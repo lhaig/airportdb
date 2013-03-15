@@ -1,4 +1,3 @@
-
 # AirportDB
 
 This app is my attempt to display the data provided by http://www.ourairports.com/data/ in rails and hopefully get some help to make it better.
@@ -25,6 +24,6 @@ Feel free to chat with the AirportDB core team (and many other users) on IRC in 
 
 ### Copyright
 
-Copyright © 2013 Lance Haig. See [LICENSE]() for details.
+Copyright © 2013 Lance Haig. See [LICENSE](LICENSE.md) for details.
 
 Project is a member of the [OSS Manifesto](http://ossmanifesto.com/).
