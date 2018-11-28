@@ -6,6 +6,9 @@ This app is my attempt to display the data provided by http://www.ourairports.co
 
 This project is still ALPHA
 
+## Integrations
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=lhaig/airportdb)](https://dependabot.com)
+
 ### Troubleshooting
 
 ### Development
