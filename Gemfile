@@ -11,7 +11,7 @@ gem 'bootstrap-sass', '3.4.1'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 5.0.7'
+  gem 'sass-rails',   '~> 6.0.0'
   gem 'coffee-rails', '~> 5.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
